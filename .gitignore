@@ -30,7 +30,9 @@ src/backend/static/
 */src/backend/static/*
 /src/backend/static/*
 src/backend/database.py
-src/staticfiles/
+hertes_food_products_pvt/staticfile/
+hertes_food_products_pvt/media_root/
+
 */database.py
 *.egg-info/
 .installed.cfg
@@ -124,7 +126,5 @@ src/static/*
 myvenv
 # Sphinx documentation
 docs/_build/
-#settings file
+#settings file 33
 backend/settings.py
-p.py
-pp.py
