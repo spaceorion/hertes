@@ -1,0 +1,38 @@
+{% extends "master.html" %}
+{% block content %}
+{% load static %}
+<br>
+{% for ab in about %}
+<div class="container">
+    <a href="">
+        <center>
+            <div>
+                
+                {% comment %} <img width="700" height="30" src="{{ab.image.url}}" class="img-fluid shadow" alt="" />  {% endcomment %}
+                {% if ab.image and ab.image.url %}
+                    <img width="700" height="30" src="{{ ab.image.url }}" class="img-fluid shadow" alt="" />
+                {% else %}
+                    <!-- Some default content if ab.image doesn't exist or doesn't have a URL -->
+                    {% comment %} <p>No image available</p> {% endcomment %}
+                {% endif %}
+                {% comment %} <p style="color: rgb(18, 18, 19); text-align: center;"> {% endcomment %}
+                    {% comment %} <span style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5); display: block; padding: 10px; background-color: yellow;">
+                        <strong></strong>
+                    </span> {% endcomment %}
+                    <h5>
+                    <span style="display: block; padding: 10px; text-align: justify;">
+                        {{ ab.text|safe }}
+                    </span>
+                </h5>
+                </p>
+                <p style="text-align: center; color: rgb(18, 18, 19);">
+                    {{ ab.timedate }}
+                </p>
+        </center>
+    </a>
+</div>
+{% endfor %}
+ 
+
+
+    {% endblock %}

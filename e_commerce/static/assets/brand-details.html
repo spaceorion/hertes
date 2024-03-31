@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hertes: Details</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="icon"
+      href="/assets/images/logo.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css"
+    />
+    <link rel="stylesheet" href="/assets/custom.css" />
+    <link rel="stylesheet" href="/assets/navbar.css" />
+  </head>
+
+  <body>
+    <header class="bg-white">
+      <div class="py-md-4 py-2 container">
+        <div class="d-md-flex justify-content-between align-items-center">
+          <img width="150" src="/assets/images/logo.png" class="img-fluid" />
+          <div class="d-md-flex align-items-center gap-3">
+            <form class="d-flex align-items-center border-bottom" role="search">
+              <input
+                class="form-control bg-transparent border-0 me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <img
+                width="25"
+                src="/assets/images/Search-Icon.svg"
+                class="img-fluid search-icon"
+              />
+            </form>
+            <div class="d-flex mt-md-0 mt-3 gap-3 align-items-center">
+              <a href="#" class="btn btn-primary">Contact us</a>
+              <div class="switch-css">
+                <label class="switch">
+                  <input type="checkbox" id="toggle" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav
+        class="navbar py-0 navbar-expand-lg navbar-light bg-light"
+        aria-label="Offcanvas navbar large"
+      >
+        <div class="container">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                ><i class="fas fa-home"></i
+              ></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                About us
+              </a>
+              <ul class="dropdown-menu">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="d-flex justify-content-between">
+                        <p class="mt-4 text-white px-3">About us</p>
+                        <span class="border-circle">
+                          <button
+                            type="button"
+                            class="btn-close btn-close-white"
+                            aria-label="Close"
+                          ></button>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <li class="mb-4">
+                        <a
+                          class="dropdown-item gap-2 d-flex align-items-center border-bottom border-2"
+                          href="#"
+                          >Go to <span class="fs-5"> About us</span>
+                          <i
+                            class="fa ms-auto fa-arrow-right"
+                            aria-hidden="true"
+                          ></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item border-bottom" href="#"
+                          >All About HERTES</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item border-bottom" href="#"
+                          >Presence Across India</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item border-bottom" href="#"
+                          >Research and Development</a
+                        >
+                      </li>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-bg-light shadow mt-5 p-3">
+                  <div class="container">
+                    <div class="hstack justify-content-end gap-3">
+                      <div>
+                        <i class="fas me-2 text-yellow fa-phone"></i> Contact Us
+                      </div>
+                      <div class="vr"></div>
+                      <div>
+                        <i class="fas me-2 text-pink fa-user"></i> Login
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Our Stories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Businesses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hertes Society</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nutrition Health and Wellness</a>
+            </li>
+          </ul>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar2"
+            aria-controls="offcanvasNavbar2"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end text-bg-light border-0"
+            tabindex="-1"
+            id="offcanvasNavbar2"
+            aria-labelledby="offcanvasNavbar2Label"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
+              <button
+                type="button"
+                class="btn-close btn-close-dark"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Careers</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Investors </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Media </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="py-4 container">
+          <div class="row justify-content-center align-items-center g-3">
+            <div class="col-md-12">
+              <nav
+                style="
+                  --bs-breadcrumb-divider: url(
+                    &#34;data:image/svg + xml,
+                    %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='%236c757d'/%3E%3C/svg%3E&#34;
+                  );
+                "
+                aria-label="breadcrumb"
+              >
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="/index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item" aria-current="page">
+                    Our Businesses
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    HERTES BAR ONE
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div class="col-md-12">
+              <div class="d-flex justify-content-between">
+                <h2 class="mb-4 card-title text-black">HERTES BAR ONE</h2>
+                <div class="social-icon d-flex gap-2">
+                  <a class="text-white" href="#"
+                    ><i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a class="text-white" href="#"
+                    ><i class="fab fa-instagram"></i>
+                  </a>
+                  <a class="text-white" href="#"
+                    ><i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+              <img
+                src="/assets/images/brands-details.jpg"
+                class="rounded card-img-top"
+                alt=""
+              />
+            </div>
+            <div class="col-md-12">
+              <div class="border-bottom pb-3">
+                <div class="row align-items-center g-0">
+                  <div class="col-md-4">
+                    <img
+                      src="/assets/images/brands-details1.jpg"
+                      class="img-fluid rounded-start"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h2 class="mb-4 card-title text-black">Hertes BarOne</h2>
+                      <h5 class="text-black card-text">
+                        It comes with the perfect combination of smooth caramel
+                        and malt infused nougat covered with thick chocolayer
+                        making it the perfect partner full of non-stop masti and
+                        non-stop action.
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="border-bottom pb-3">
+                <div class="row align-items-center g-0">
+                  <div class="col-md-4">
+                    <img
+                      src="/assets/images/brands-details2.jpg"
+                      class="img-fluid rounded-start"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h2 class="mb-4 card-title text-black">
+                        Hertes BarOne Double
+                      </h2>
+                      <p class="text-black card-text">
+                        Hertes BarOne Double comes with 2 shareable bars which
+                        will give you Double the Masti, Double the Dhamaka.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- news banner -->
+        <div class="my-4 py-5 latest-bg news-banner">
+          <div class="container-fluid">
+            <div class="container">
+              <div class="row justify-content-center align-items-centers g-5">
+                <div class="col-md-3">
+                  <div class="d-grid gap-2 h-100">
+                    <h4 class="card-title mb-3 text-white">Hertes news</h4>
+                    <h6 class="card-text text-white">
+                      Search our archive of news and press releases
+                    </h6>
+                    <div>
+                      <a href="#" class="btn rounded-0 btn-light"
+                        >Discover all the news</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="d-grid gap-2 h-100">
+                    <h4 class="card-title mb-3 text-white">
+                      Compliance Concerns
+                    </h4>
+                    <h6 class="card-text text-white">
+                      Speak Up about your concerns
+                    </h6>
+                    <div>
+                      <a href="#" class="btn rounded-0 btn-outline-light"
+                        >Speak Up
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 map-img">
+                  <img src="/assets/images/map.png" class="img-fluid" alt="" />
+                </div>
+                <div class="col-md-3">
+                  <div class="d-grid gap-2 h-100">
+                    <h4 class="card-title mb-3 text-white">Contact us</h4>
+                    <h6 class="card-text text-white">
+                      Across the globe, Nestlé are here to help answer your
+                      queries
+                    </h6>
+                    <div>
+                      <a href="#" class="btn rounded-0 btn-outline-light"
+                        >Contact us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="py-5">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-md-3 mb-3">
+              <div class="px-4">
+                <h4 class="text-black">Hertes</h4>
+                <h3>
+                  We unlock the power of food to enhance quality of life for
+                  everyone, today and for generations to come
+                </h3>
+                <img class="mt-3 img-fluid" src="/assets/images/logo.png" />
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <h5 class="border-top border-dark pt-2">ABOUT US</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">All About Nestlé</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Presence Across India</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Research and Development</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted"
+                    >Our Websites and Social Media Presence</a
+                  >
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Trending Now</a>
+                </li>
+              </ul>
+              <h5 class="border-top border-dark pt-2">OUR STORIES</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Our stories</a>
+                </li>
+              </ul>
+              <h5 class="border-top border-dark pt-2">NESTLÉ IN SOCIETY</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Creating Shared Value</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Individuals and Families</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Communities</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Planet</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <h5 class="border-top border-dark pt-2">BRANDS</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Beverages</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Breakfast Cereals</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted"
+                    >Chocolates and Confectionery
+                  </a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Dairy</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Nutrition</a>
+                </li>
+              </ul>
+              <h5 class="border-top border-dark pt-2">
+                NUTRITION HEALTH AND WELLNESS
+              </h5>
+              <ul class="nav flex-column">
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Healthy Living</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Nutrition Basics</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Understanding Food Labels </a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Family, fun and food</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Myths and Tips</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <h5 class="border-top border-dark pt-2">INVESTORS</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Directors and Officers</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Key Figures</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Analysts' Meet</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Investor Services</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Policies/Code of Conduct</a>
+                </li>
+              </ul>
+              <h5 class="border-top border-dark pt-2">MEDIA</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Media Library</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Events</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Press Releases</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Special Announcements</a>
+                </li>
+                <li class="nav-item hover-border-link mb-2">
+                  <a href="#" class="text-muted">Statements</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <h2 class="text-shadow-1">FOLLOW US ON</h2>
+            <div class="wrapper mx-auto">
+              <a href="#" class="facebook holder">
+                <span class="icon"><i class="fab fa-facebook-f"></i></span>
+                <span class="tooltip">Facebook</span>
+              </a>
+              <a href="#" class="twitter holder">
+                <span class="icon"><i class="fab fa-twitter"></i></span>
+                <span class="tooltip">Twitter</span>
+              </a>
+              <a href="#" class="instagram holder">
+                <span class="icon"><i class="fab fa-instagram"></i></span>
+                <span class="tooltip">Instagram</span>
+              </a>
+              <a href="#" class="linkedin holder">
+                <span class="icon"><i class="fab fa-linkedin-in"></i></span>
+                <span class="tooltip">Linkedin</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-bg-dark p-3">
+        <div class="container">
+          <div class="hstack justify-content-center gap-3">
+            <div>Contact us</div>
+            <div class="vr"></div>
+            <div>Employee Login</div>
+            <div class="vr"></div>
+            <div>Copyright</div>
+            <div class="vr"></div>
+            <div>FAQ's</div>
+            <div class="vr"></div>
+            <div>Help</div>
+            <div class="vr"></div>
+            <div>Privacy Policy</div>
+            <div class="vr"></div>
+            <div>Site map</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="/assets/custom.js"></script>
+
+    <script type="text/javascript">
+      $(".slick-slider").slick({
+        slidesToShow: 6,
+        infinite: true,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: true,
+        arrows: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 2,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

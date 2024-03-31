@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #f3f3f3;
+            border-top: 3px solid #f25a41;
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #overlay {
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay">
+        <div class="spinner"></div>
+    </div>
+    <div id="overlay">
+        <h1 class="overlay-heading">Hertes</h1>
+        <img width="130" src="{% static 'assets/images/logo.png' %}" class="img-fluid" />
+        <div class="spinner"></div>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            var overlay = document.getElementById("overlay");
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
