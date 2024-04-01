@@ -2,37 +2,61 @@
 {% block content %}
 {% load static %}
 <br>
-{% for ab in about %}
-<div class="container">
-    <a href="">
-        <center>
-            <div>
-                
-                {% comment %} <img width="700" height="30" src="{{ab.image.url}}" class="img-fluid shadow" alt="" />  {% endcomment %}
-                {% if ab.image and ab.image.url %}
-                    <img width="700" height="30" src="{{ ab.image.url }}" class="img-fluid shadow" alt="" />
-                {% else %}
-                    <!-- Some default content if ab.image doesn't exist or doesn't have a URL -->
-                    {% comment %} <p>No image available</p> {% endcomment %}
+
+<section>
+    {% for ab in about %}
+    <div class="py-4 container">
+        <div class="row justify-content-center align-items-center g-20">
+            <br>
+            {% if ab.image and ab.image.url %}
+            <div class="col-md-7" style="width:800px">
+                <div class="card shadow" style="height: auto; width: 100%;"> <!-- Changed height to auto and set width to 100% -->
+                    <img
+                        src="{{ab.image.url}}"
+                        class="card-img-top"
+                        alt=""
+                    />
+                    {% else %}
+                    
                 {% endif %}
-                {% comment %} <p style="color: rgb(18, 18, 19); text-align: center;"> {% endcomment %}
-                    {% comment %} <span style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5); display: block; padding: 10px; background-color: yellow;">
-                        <strong></strong>
-                    </span> {% endcomment %}
-                    <h5>
-                    <span style="display: block; padding: 10px; text-align: justify;">
-                        {{ ab.text|safe }}
-                    </span>
-                </h5>
-                </p>
-                <p style="text-align: center; color: rgb(18, 18, 19);">
-                    {{ ab.timedate }}
-                </p>
-        </center>
-    </a>
-</div>
-{% endfor %}
- 
+                    <div class="card-body">
+                        {% comment %} <h4 class="card-title text-blue">About Hertes</h4> {% endcomment %}
+                        <p class="card-text text-truncate2" style="word-wrap: break-word;"> <!-- Added style for word-wrap -->
+                            {{ ab.text|safe }}
+                        </p>
+                        <br>
+                        <center>
+                        <a
+                            href="#"
+                            style="bottom: 20px"
+                            class="text-blue position-absolute stretched-link"
+                        >{{ ab.timedate }}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-arrow-right-short"
+                                viewBox="0 0 16 16"
+                            >
+                        </center>
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+    
 
 
-    {% endblock %}
+{% endblock %}
+

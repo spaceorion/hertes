@@ -1,75 +1,54 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            width: 100%;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Navbar</title>
+<!-- Include Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+/* Custom styles for mobile */
+@media (max-width: 768px) {
+    /* Collapse the navbar by default on mobile */
+    .navbar-collapse {
+        display: none;
+    }
+    /* Show the navbar when toggler button is clicked */
+    .navbar-toggler[aria-expanded="true"] + .navbar-collapse {
+        display: block;
+    }
 
-        .spinner, .img-fluid {
-            width: 200px; /* Increase width */
-            height: 200px; /* Increase height */
-        }
-
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 6px solid #f25a41;
-            border-radius: 50%;
-            position: absolute;
-            animation: spin 1s infinite linear;
-        }
-
-        .img-fluid {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        #overlay {
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            position: fixed;
-            left: 0;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-    </style>
+    /* Make links show as finger pointer on mobile */
+    .navbar-nav .nav-item .nav-link {
+        cursor: pointer;
+    }
+}
+</style>
 </head>
 <body>
-    <div id="overlay">
-        <div class="spinner"></div>
-    </div>
-    <div id="overlay">
-        <img width="130" src="{% static 'assets/images/logo.png' %}" class="img-fluid" />
-        <h1 class="overlay-heading"></h1>
-        <div class="spinner"></div>
-    </div>
-   
-    <script>
-        window.addEventListener('load', function() {
-            var overlay = document.getElementById("overlay");
-            overlay.style.display = 'none';
-        });
-    </script>
+
+<!-- Your navbar toggler button -->
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- Your navbar content -->
+<div class="collapse navbar-collapse" id="main_nav">
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/about-us/" role="button" aria-expanded="false">About us</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/all-about-us/">Go to About Us</a></li>
+                <li><a class="dropdown-item" href="/vision-mission/">Vision & Mission</a></li>
+                <li><a class="dropdown-item" href="/our-purpose/">Our Purpose</a></li> 
+                <li><a class="dropdown-item" href="/our-value/">Our Value</a></li>
+                <li><a class="dropdown-item" href="/our-progress/">Our Progress</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<!-- Include Bootstrap JS at the end of the body -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
