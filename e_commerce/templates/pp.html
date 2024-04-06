@@ -5,6 +5,7 @@
 <head>
   <title>Hertes: Good food, Good life</title>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="{% static 'css/animate.css' %}" rel="stylesheet">
   <link href="{% static 'css/main.css' %}" rel="stylesheet">
   <link href="{% static 'css/responsive.css' %}" rel="stylesheet"> 
@@ -19,33 +20,50 @@
   <link rel="stylesheet" href="/static//assets/custom.css" />
   <link rel="stylesheet" href="/static//assets/navbar.css" />
   <style>
-  .preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #008aff, #ff00cc); /* Gradient background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.preloader img {
-  animation: pulse 2s infinite alternate; /* Pulse animation */
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
+    .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #008aff, #ff00cc); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
   }
-  100% {
-    transform: scale(1.1);
+  
+  .preloader img {
+    animation: pulse 2s infinite alternate; /* Pulse animation */
   }
-}
-
-  </style>
+  
+    </style>
+    <style>
+      /* Your existing CSS styles */
+      .dropdown-menu {
+        display: none;
+        position: relative;
+      }
+      .dropdown-menu.active {
+        display: block;
+      }
+      /* Additional styles for mobile view */
+      @media only screen and (max-width: 768px) {
+        .nav-item {
+          position: relative;
+        }
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+        }
+        .dropdown-menu-top {
+          top: auto;
+          bottom: 100%;
+        }
+      }
+    </style>
+   
 </head>
 
 <body>
@@ -56,7 +74,7 @@
     
     <div class="py-md-4 py-2 container">
       <div class="d-md-flex justify-content-between align-items-center">
-        <img width="130" src="{% static 'assets/images/logo.png' %}" class="img-fluid" />
+        <img width="140" src="{% static 'assets/images/hertes100.jpg' %}" class="img-fluid" />
         <div class="d-md-flex align-items-center gap-3">
           <form class="d-flex align-items-center border-bottom" role="search">
             <input class="form-control bg-transparent border-0 me-2" type="search" placeholder="Search"
@@ -75,103 +93,97 @@
         </div>
       </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar py-0 navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <ul class="navbar-nav">
-          <a href="/">
-            <span class="icon"><i class="fas fa-home"></i></span>
-          </a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/about-us/" role="button" aria-expanded="false">About us</a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="/all-about-us/">Go to About Us</a>
-              </li>
+        <a class="navbar-brand" href="/"
+          ><i class="fas text-black fa-home"></i
+        ></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main_nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main_nav">
+          <ul class="navbar-nav ">
             
-              <li>
-                <a class="dropdown-item" href="/vission-mission/">Vision & Mission</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/our-purpose/">Our Purpose</a>
-              </li> 
-              <li>
-                <a class="dropdown-item" href="/our-value/">Our Value  </a>
-              </li>
-               <li>
-                <a class="dropdown-item" href="/our-progress/">Our progress  </a>
-              </li>
-             
-            </ul>
-            
-          </li>
            
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">Our business</a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="#">Go to Our business</a>
-              </li>
-              <li class="dropdown-submenu">
-                <a class="dropdown-item" href="#">Eqwa tech</a>
-                <ul class="dropdown-menunested">
-                  <li><a class="dropdown-item" href="#"></a></li>
-                  <li><a class="dropdown-item" href="#">Presence Across India</a></li>
-                  <li><a class="dropdown-item" href="#">Research and Development</a></li>
-                </ul>
-              </li>
-              <li class="dropdown-submenu">
-                <a class="dropdown-item" href="#">Arrocos</a>
-                <ul class="dropdown-menunested">
-                  <li><a class="dropdown-item" href="#">Coffee decoction</a></li>
-                  <li><a class="dropdown-item" href="#">Presence Across India</a></li>
-                  <li><a class="dropdown-item" href="#">Research and Development</a></li>
-                </ul>
-              </li>
-              <li class="dropdown-submenu">
-                <a class="dropdown-item" href="#">Hertes Fitlys</a>
-                <ul class="dropdown-menunested">
-                  <li><a class="dropdown-item" href="#">Millet- based snacks</a></li>
-                  <li><a class="dropdown-item" href="#">Presence Across India</a></li>
-                  <li><a class="dropdown-item" href="#">Research and Development</a></li>
-                </ul>
-              </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"  role="button" aria-expanded="false">About us</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/all-about-us/">Go to About Us</a>
+                </li>
               
+                <li>
+                  <a class="dropdown-item" href="/vission-mission/">Vision & Mission</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/our-purpose/">Our Purpose</a>
+                </li> 
+                <li>
+                  <a class="dropdown-item" href="/our-value/">Our Value  </a>
+                </li>
+                 <li>
+                  <a class="dropdown-item" href="/our-progress/">Our progress  </a>
+                </li>
+               
+              </ul>
+              
+            </li>
+            <div class="mt4" style="margin-top: -.36rem;">
+    <ul class="navbar">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" aria-expanded="false">Our business</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item" href="#">Go to Our business</a>
+                </li>
+                <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="#">Eqwa tech</a>
+                    <ul class="dropdown-menunested">
+                        <li><a class="dropdown-item" href="#">Presence Across India</a></li>
+                        <li><a class="dropdown-item" href="#">Research and Development</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="#">Arrocos</a>
+                    <ul class="dropdown-menunested">
+                        <li><a class="dropdown-item" href="#">Coffee decoction</a></li>
+                        <li><a class="dropdown-item" href="#">Presence Across India</a></li>
+                        <li><a class="dropdown-item" href="#">Research and Development</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="#">Hertes Fitlys</a>
+                    <ul class="dropdown-menunested">
+                        <li><a class="dropdown-item" href="#">Millet- based snacks</a></li>
+                        <li><a class="dropdown-item" href="#">Presence Across India</a></li>
+                        <li><a class="dropdown-item" href="#">Research and Development</a></li>
+                    </ul>
+                </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/our-hitory/">Our Stories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Shop</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Media</a>
-          </li>
-        </ul>
-
-        <div class="offcanvas offcanvas-end text-bg-light border-0" tabindex="-1" id="offcanvasNavbar2"
-          aria-labelledby="offcanvasNavbar2Label">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
-            <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"
-              aria-label="Close"></button>
-          </div>
-          {% comment %} <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Careers</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Investors </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Media </a>
-              </li>
-            </ul>
-          </div> {% endcomment %}
+        </li>
+    </ul>
+</div>
+            <li class="nav-item">
+              <a class="nav-link" href="/our-hitory/">Our Stories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Media</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
+    
   </header>
   <!-- mobile mene -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -295,10 +307,12 @@
       <div class="py-3 text-center container">
 
         <div class="slick-slider brands-slider">
+          {% for i in slid %}
           <a href="/assets/brand-details.html">
-            <img src="{% static 'assets/images/brand1.png' %}" class="img-fluid shadow" alt="" />
+            <img src="{{ i.image.url}}" class="img-fluid shadow" alt="" />
           </a>
-          <a href="/assets/brand-details.html">
+          {% endfor %}
+          {% comment %} <a href="/assets/brand-details.html">
             <img src="{% static 'assets/images/brand2.png' %}" class="img-fluid shadow" alt="" />
           </a>
           <a href="/assets/brand-details.html">
@@ -321,7 +335,7 @@
           </a>
           <a href="/assets/brand-details.html">
             <img src="{% static 'assets/images/brand9.png' %}" class="img-fluid shadow" alt="" />
-          </a>
+          </a> {% endcomment %}
         </div>
         <a href="#" class="mt-5 btn btn-primary">View all brands
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -521,12 +535,33 @@
       ],
     });
   </script>
-   <script>
+  <script>
     // Hide the preloader after 2 seconds
     setTimeout(function(){
       document.querySelector('.preloader').style.display = 'none';
     }, 2000);
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+      dropdownToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+          var dropdownMenu = this.nextElementSibling;
+          dropdownMenu.classList.toggle('active');
+        });
+      });
+    
+      // If you have nested dropdowns
+      var dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
+      dropdownSubmenus.forEach(function(submenu) {
+        submenu.addEventListener('click', function(e) {
+          e.stopPropagation(); // Prevent parent click event from firing
+          this.classList.toggle('active');
+        });
+      });
+    });
+    </script>
+    
 </body>
 
 </html>

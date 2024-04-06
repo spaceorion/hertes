@@ -27,6 +27,10 @@ urlpatterns = [
     path('our-value/',views.our_value,name='value'),
     path('vission-mission/',views.vission_and_mission,name='vision'),
     path('our-hitory/',views.our_history,name='history'),
+    # path('brand/',views.brand_view,name='brand'),
+    
+    path('products/<int:subcategory_id>/',views.product_list, name='product_list'),
+    
     
 
     

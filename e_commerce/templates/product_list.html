@@ -1,0 +1,89 @@
+{% extends "master.html" %}
+{% block content %}
+{% load static %}
+<br>
+{% for product in products %}
+<section>
+  <div class="py-4 container">
+    <div class="row justify-content-center align-items-center g-3">
+      <div class="col-md-3"style="width:300px">
+        <div class="card shadow" style="height: 500px">
+          <img
+            src="{{ product.image.url }}"
+            class="card-img-top"
+            alt=""
+          />
+          <div class="card-body">
+            <p class="card-title text-blue">{{ product.name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs-{{product.price}}</p>
+            <p class="card-text text-truncate2 " style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-top: -.96rem;">
+              {{ product.text|safe|slice:":300" }}..
+            </p>
+            
+            <a
+              href="#"
+              style="bottom: 10px"
+              class="text-blue position-absolute stretched-link"
+              >READ MORE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ product.date }}
+              {% comment %} <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right-short"
+                viewBox="0 0 16 16"
+              > {% endcomment %}
+              
+                <path
+                  fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+
+<div class="py-3 text-center container">
+
+    <div class="slick-slider brands-slider">
+      {% for i in slid_second %}
+      <a href="/assets/brand-details.html">
+        <img src="{{ i.image.url }}" class="img-fluid shadow" alt="" />
+      </a>
+      {% endfor %}
+      
+    </div>
+    <a href="#" class=" btn btn-primary " style="margin-top: -.96rem;">View all brands
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+      </svg>
+    </a>
+  </div>
+
+
+    {% endblock %}
+
+{% comment %} <ul>
+    {% for product in products %}
+    <li>
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>Price: ${{ product.price }}</p>
+      <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    </li>
+    {% endfor %}
+  </ul> {% endcomment %}

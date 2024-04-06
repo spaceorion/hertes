@@ -1,54 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Navbar</title>
-<!-- Include Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-/* Custom styles for mobile */
-@media (max-width: 768px) {
-    /* Collapse the navbar by default on mobile */
-    .navbar-collapse {
-        display: none;
-    }
-    /* Show the navbar when toggler button is clicked */
-    .navbar-toggler[aria-expanded="true"] + .navbar-collapse {
-        display: block;
-    }
-
-    /* Make links show as finger pointer on mobile */
-    .navbar-nav .nav-item .nav-link {
-        cursor: pointer;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add your custom CSS styles here */
+    </style>
 </head>
 <body>
-
-<!-- Your navbar toggler button -->
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-
-<!-- Your navbar content -->
-<div class="collapse navbar-collapse" id="main_nav">
-    <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/about-us/" role="button" aria-expanded="false">About us</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/all-about-us/">Go to About Us</a></li>
-                <li><a class="dropdown-item" href="/vision-mission/">Vision & Mission</a></li>
-                <li><a class="dropdown-item" href="/our-purpose/">Our Purpose</a></li> 
-                <li><a class="dropdown-item" href="/our-value/">Our Value</a></li>
-                <li><a class="dropdown-item" href="/our-progress/">Our Progress</a></li>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Your Brand</a>
+        
+        <!-- Navbar links -->
+        <div class="navbar-collapse" id="main_nav">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">Our business</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#">Go to Our business</a>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item" href="#">Eqwa tech</a>
+                            <ul class="dropdown-menunested">
+                                <li><a class="dropdown-item" href="#">Presence Across India</a></li>
+                                <li><a class="dropdown-item" href="#">Research and Development</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item" href="#">Arrocos</a>
+                            <ul class="dropdown-menunested">
+                                <li><a class="dropdown-item" href="#">Coffee decoction</a></li>
+                                <li><a class="dropdown-item" href="#">Presence Across India</a></li>
+                                <li><a class="dropdown-item" href="#">Research and Development</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item" href="#">Hertes Fitlys</a>
+                            <ul class="dropdown-menunested">
+                                <li><a class="dropdown-item" href="#">Millet-based snacks</a></li>
+                                <li><a class="dropdown-item" href="#">Presence Across India</a></li>
+                                <li><a class="dropdown-item" href="#">Research and Development</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
-        </li>
-    </ul>
-</div>
+        </div>
+    </nav>
 
-<!-- Include Bootstrap JS at the end of the body -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include Bootstrap JS (for dropdown functionality) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Add event listener to dropdown items
+        var dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(function(item) {
+            item.addEventListener('click', function(event) {
+                // Prevent default link behavior
+                event.preventDefault();
+                // If the clicked item is a dropdown with submenu
+                if (this.parentNode.classList.contains('dropdown-submenu')) {
+                    // Toggle the visibility of the submenu
+                    var submenu = this.nextElementSibling;
+                    if (submenu) {
+                        submenu.classList.toggle('show');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+/* Default styles */
+.nav-item.dropdown .dropdown-menu {
+    display: none;
+}
+
+/* Mobile and Desktop styles */
+.nav-item.dropdown .dropdown-menu {
+    position: relative;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-submenu {
+    position: static;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .nav-item.dropdown .dropdown-menu .dropdown-submenu {
+        display: block;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .nav-item.dropdown .dropdown-menu .dropdown-submenu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+    .nav-item.dropdown .dropdown-menu .dropdown-submenu:hover {
+        display: block;
+    }
+}
+username = bibhass
+password = bibhass@1234
