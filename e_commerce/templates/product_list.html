@@ -1,6 +1,42 @@
 {% extends "master.html" %}
 {% block content %}
 {% load static %}
+<main>
+  <div id="carouselExampleCaptions" class="carousel slide slider" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      {% for i in first_slid %}
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active" aria-current="true"{% endif %} aria-label="Slide {{ forloop.counter }}">
+      </button>
+      {% endfor %}
+    </div>
+    
+    <div class="carousel-inner">
+      {% for slide in first_slid %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <img src="{{ slide.image.url }}" class="d-block w-100" alt="" />
+        <div class="carousel-caption d-none d-md-block">
+          <h2>{{ slide.name }}</h2>
+          <p>{{ slide.txt|safe }}</p>
+          <a href="#" class="mb-3">READ MORE
+            <i class="fa ms-2 fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+      
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+</main>
 <br>
 {% for product in products %}
 <section>
@@ -56,14 +92,14 @@
 
 
 <div class="py-3 text-center container">
-
+<center>
     <div class="slick-slider brands-slider">
       {% for i in slid_second %}
       <a href="/assets/brand-details.html">
         <img src="{{ i.image.url }}" class="img-fluid shadow" alt="" />
       </a>
       {% endfor %}
-      
+    
     </div>
     <a href="#" class=" btn btn-primary " style="margin-top: -.96rem;">View all brands
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -73,7 +109,7 @@
       </svg>
     </a>
   </div>
-
+    </center>
 
     {% endblock %}
 

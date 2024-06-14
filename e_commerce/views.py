@@ -20,11 +20,19 @@ def index(request):
         'first_slid':slid_obj,
         'slid_second':slid_obj_brand,
     }
-    return render(request,'index.html',context)
+    return render(request,'kk.html',context)
 #
 def product_list(request, subcategory_id):
     products = product.objects.filter(sub_category=subcategory_id)
-    return render(request, 'product_list.html', {'products': products})
+    slid_obj_brand=Slidingimagebrand.objects.all()
+    slid_obj=Slidingimage.objects.all()
+    context={
+        "products":products,
+        "slid_second":slid_obj_brand,
+        'first_slid':slid_obj,
+
+    }
+    return render(request, 'product_list.html',context)
 #
 #
 #
@@ -41,7 +49,7 @@ def our_value(request):
         'slid_second':slid_obj_brand,
         'about':value_obj,
     }
-    return render(request,'about_us/about_us.html',{'about':value_obj})
+    return render(request,'about_us/our_values.html',context)
 #
 def our_progress(request):
     slid_obj_brand=Slidingimagebrand.objects.all()

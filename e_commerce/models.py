@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor_uploader.fields import RichTextUploadingField
+
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=150)
@@ -12,7 +12,7 @@ class Sub_category(models.Model):
 class Brand(models.Model):
     name = models.CharField(max_length=150)
     image =models.ImageField(upload_to='about/',blank=True,null=True)
-    text = RichTextUploadingField()
+    text = models.TextField()
     timedate = models.DateTimeField(auto_now_add=True, blank=True)
 class product(models.Model):
     Available =(
@@ -24,7 +24,7 @@ class product(models.Model):
     available  = models.CharField(max_length = 100,choices =Available,null ='True')
     image = models.ImageField(upload_to='Ecommerce/ping')
     name = models.CharField(max_length=100)
-    text = RichTextUploadingField()
+    text = models.TextField()
     price = models.IntegerField()
     
     date = models.DateField(auto_now_add=True)
@@ -34,38 +34,38 @@ class product(models.Model):
 class about_us(models.Model):
     name = models.CharField(max_length=150,blank=True,null=True)
     image =models.ImageField(upload_to='about/',blank=True,null=True)
-    text = RichTextUploadingField()
+    text = models.TextField()
     timedate = models.DateTimeField(auto_now_add=True, blank=True)
 class all_about_us(models.Model):
     image =models.ImageField(upload_to='all_about/',blank=True,null=True)
-    text = RichTextUploadingField()
+    text = models.TextField()
     timedate = models.DateTimeField(auto_now_add=True, blank=True)
 class vision_mission(models.Model):
     image =models.ImageField(upload_to='vision_&_misson',blank=True,null=True)
-    text = RichTextUploadingField()
+    text = models.TextField()
     timedate = models.DateTimeField(auto_now_add=True, blank=True)
 class history(models.Model):
     image =models.ImageField(upload_to='vision_&_misson',blank=True,null=True)
-    text = RichTextUploadingField()
+    text = models.TextField()
     timedate = models.DateTimeField(auto_now_add=True, blank=True)
 class Our_purpose(models.Model):
     image =models.ImageField(upload_to='vision_&_misson',blank=True,null=True)
-    text = RichTextUploadingField()
+    text = models.TextField()
     timedate = models.DateTimeField(auto_now_add=True, blank=True)
 class Our_value(models.Model):
     image =models.ImageField(upload_to='vision_&_misson',blank=True,null=True)
-    text = RichTextUploadingField()
+    text = models.TextField()
     timedate = models.DateTimeField(auto_now_add=True, blank=True)
 class Our_progress(models.Model):
     image =models.ImageField(upload_to='vision_&_misson',blank=True,null=True)
-    text = RichTextUploadingField()
+    text = models.TextField()
     timedate = models.DateTimeField(auto_now_add=True, blank=True)
 
 
 class Slidingimage(models.Model):
     name = models.CharField(max_length=150)
     image =models.ImageField(upload_to='sliding/image',blank=True,null=True)
-    txt = RichTextUploadingField()
+    txt = models.TextField()
 class Slidingimagebrand(models.Model): 
     image =models.ImageField(upload_to='sliding/image',blank=True,null=True)
    

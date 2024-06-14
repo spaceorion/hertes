@@ -2,74 +2,90 @@
 {% block content %}
 {% load static %}
 <br>
+<style>
+    .green-text {
+        color: green;
+        display: inline;
+    }
 
-<section>
+    .inline-text {
+        display: inline;
+        font-size: 15px;
+
+    }
+
+    .about-style-two {
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .auto-container {
+        width: 90%;
+        /* height: 100%; */
+        margin: 0 auto;
+    }
+    
+</style>
+
+
+<section class="about-style-two" id="about">
     {% for ab in about %}
-    <div class="py-4 container">
-        <div class="row justify-content-center align-items-center g-20">
-            <br>
-            <div class="col-md-7" style="width:800px">
-                <div class="card shadow" style="height: auto; width: 100%;"> <!-- Changed height to auto and set width to 100% -->
-                    <img
-                        src="{{ab.image.url}}"
-                        class="card-img-top"
-                        alt=""
-                    />
-                    <div class="card-body">
-                        {% comment %} <h4 class="card-title text-blue">About Hertes</h4> {% endcomment %}
-                        <p class="card-text text-truncate2" style="word-wrap: break-word;"> <!-- Added style for word-wrap -->
-                            {{ ab.text|safe }}
-                        </p>
-                        <br>
-                        <center>
-                        <a
-                            href="#"
-                            style="bottom: 20px"
-                            class="text-blue position-absolute stretched-link"
-                        >{{ ab.timedate }}
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                class="bi bi-arrow-right-short"
-                                viewBox="0 0 16 16"
-                            >
-                        </center>
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
-                                />
-                            </svg>
-                        </a>
+    <div class="auto-container">
+        <div class="inner-container">
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div id="image_block_1">
+                        <div class="image-box">
+                            {% if ab.image.url %}
+                            <img src="{{ ab.image.url }}" class="card-img-top" alt="image" />
+                            {% else %}
+                            <p>No image available</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <h2>About Our Vision and Mission</h2>
+                    <div id="content_block_3">
+                        <div class="content-box">
+                            <div class="sec-title"></div>
+                            <div class="text">
+                                <p style="font-size: 20px;">
+                                    Vision: Our vision is to enrich the health and wellness of humanity through food
+                                    Mission: We strive to comprehend the disparities among the triad of food quality,
+                                    industry demands, and consumer preferences by uncovering and resolving the mysteries
+                                    surrounding the myriad methods employed in food production and their evolution from
+                                    traditional to contemporary practices.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+    {% endfor %}
 </section>
-{% endfor %}
+
 <div class="py-3 text-center container">
+    <center>
+        <h4 class="green-text">𝓓𝓔ℒ𝓥𝓔 <span class="inline-text">INTO&nbsp;
+                &nbsp;&nbsp;OUR&nbsp;&nbsp;&nbsp;OTHER&nbsp;&nbsp;&nbsp;BRANDS</span></h4>
+        <div class="slick-slider brands-slider">
+            {% for i in slid_second %}
+            <a href="/assets/brand-details.html">
+                <img src="{{ i.image.url }}" class="img-fluid shadow" alt="" />
+            </a>
+            {% endfor %}
+        </div>
+        <a href="#" class="mt-5 btn btn-primary">View all brands
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+            </svg>
+        </a>
+    </center>
+</div>
 
-    <div class="slick-slider brands-slider">
-      {% for i in slid_second %}
-      <a href="/assets/brand-details.html">
-        <img src="{{ i.image.url }}" class="img-fluid shadow" alt="" />
-      </a>
-      {% endfor %}
-      
-    </div>
-    <a href="#" class="mt-5 btn btn-primary">View all brands
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-          d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-      </svg>
-    </a>
-  </div>
-
- 
-
-
-    {% endblock %}
+{% endblock %}
